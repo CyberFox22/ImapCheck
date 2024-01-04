@@ -1,0 +1,16 @@
+mail1@domen.com:password
+mail2@domen.com:password
+mail3@domen.com:password
+mail4@domen.com:password
+mail1@domen.com:password
+mail2@domen.com:password
+mail3@domen.com:password
+mail4@domen.com:password
+mail1@domen.com:password
+mail2@domen.com:password
+mail3@domen.com:password
+mail4@domen.com:password
+mail1@domen.com:password
+mail2@domen.com:password
+mail3@domen.com:password
+mail4@domen.com:password
