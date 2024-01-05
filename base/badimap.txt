@@ -1,0 +1,6 @@
+mail1@domen.com:password:mail.domen.com:143
+mail2@domen.com:password:mail.domen.com:143
+mail3@domen.com:password:mail.domen.com:143
+mail4@domen.com:password:mail.domen.com:143
+mail1@domen.com:password:mail.domen.com:143
+mail2@domen.com:password:mail.domen.com:143

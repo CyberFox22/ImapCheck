@@ -35,7 +35,7 @@ class Fail {
                                 { "mail", parts[0] },
                                 { "server", "mail." + emailParts[1] },
                                 { "password", parts[1] },
-                                { "port", "465" }
+                                { "port", "143" }
                             };
                             
                             emailData.Add(entry);
@@ -51,7 +51,7 @@ class Fail {
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Произошла ошибка при чтении файла: {e.Message}");
+            Console.WriteLine($"An error occurred while reading the file: {e.Message}");
         }
 
     }

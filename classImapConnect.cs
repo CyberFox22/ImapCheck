@@ -19,12 +19,13 @@ class ImapLoginChecker
 
                 client.Disconnect(true);
 
-                return true; // Успешная аутентификация
+                return true;
             }
         }
         catch (Exception)
         {
-            return false; // Неудачная аутентификация
+            return false;
         }
     }
+
 }

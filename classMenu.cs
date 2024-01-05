@@ -24,11 +24,12 @@ public class MenuProgram() {
 
         char resultStarta;
 
-        Console.WriteLine("В данной программе вы можете проверить на валидность свой список электронных почтовых ящиков.\nДанный список вы должны положить в файл: imap.txt \n\nФормат файла:");
-        Console.WriteLine("mail1@domen.com:password\nmail2@domen.com:password\nmail3@domen.com:password\nmail4@domen.com:password");
+        Console.WriteLine("In this program, you can validate your list of email addresses.\nYou should save this list to a file.: base/imap.txt \n\nFile format:");
+        Console.WriteLine("mail1@domen.com:password\nmail2@domen.com:password\nmail3@domen.com:password\nmail4@domen.com:password\n");
+        Console.WriteLine("The execution result will be saved in files in the same folder where your validation list is located.");
 
-        Console.WriteLine("\n\nЕсли вы готовы продолжить нажмите: y / n ");
-        Console.Write("Сделайте сыой выбор: ");
+        Console.WriteLine("\n\nIf you are ready to proceed, press: y / n ");
+        Console.Write("Make your choice: ");
         resultStarta = Convert.ToChar(Console.Read());
 
         ObrabotkaFailImap(resultStarta);
@@ -45,21 +46,21 @@ public class MenuProgram() {
             
             Fail failInstance = new Fail();
 
-            failInstance.FailOpen("imap.txt", failInstance.emailData, 0);
+            failInstance.FailOpen("base/imap.txt", failInstance.emailData, 0);
 
-            Console.WriteLine("\n\nМы нашли в файле: " + failInstance.GetColStr() + " строк.\n\n");
+            Console.WriteLine("\n\nWe found in the file: " + failInstance.GetColStr() + " strings.\n");
 
             ImapLoginChecker imapCeck = new ImapLoginChecker();
 
             if (failInstance.GetColStr() > 0) {    
-                MenuProgram.Massivimap(failInstance.emailData);
+                MenuProgram.SelectParallel(failInstance.emailData);
             }else{
-                Console.WriteLine("В файле с адресами IMAP нет записей, добавьте записи и попробуйте сново!");
+                Console.WriteLine("The IMAP address file has no entries. Please add entries and try again!");
                 MenuProgram.StartMenuOpisanie();
             }
 
         }else if (resultStarta == 'n') {
-            Console.WriteLine("Программа остановлена!");
+            Console.WriteLine("The program has been stopped!");
         }else{
             System.Console.WriteLine("\n\n");
             MenuProgram.StartMenuOpisanie();
@@ -67,21 +68,25 @@ public class MenuProgram() {
 
     }
 
+    public static void SelectParallel(List<Dictionary<string, string>> emailData) {
 
-    public static void Massivimap(List<Dictionary<string, string>> emailData) {
-        foreach(var el in emailData) {
+        int resultParallel;
+        string? input;
 
-        foreach (var strArray in el) {
+        Console.ReadLine();
+        Console.Write("\nSpecify the number of processing threads: ");
+        input = Console.ReadLine();
+
+        if (int.TryParse(input?.Trim(), out resultParallel)) {
+            Multithredings.ParallelMultithredings(emailData, resultParallel);
             
-            Console.WriteLine($"{strArray.Key}: {strArray.Value}");
-        }
-
-            Console.WriteLine("\n");
-        }
+            //Console.WriteLine($"\n\nSelected number of threads: {resultParallel}\n\n\n");         
+        }else{
+            Console.WriteLine("You entered a non-numeric value!");
+            MenuProgram.SelectParallel(emailData);
+        }      
 
     }
-
-
 
 
 }

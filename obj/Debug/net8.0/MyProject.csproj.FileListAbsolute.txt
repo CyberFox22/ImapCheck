@@ -19,3 +19,4 @@ C:\MyProject\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\MyProject\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
 C:\MyProject\obj\Debug\net8.0\MyProject.csproj.AssemblyReference.cache
 C:\MyProject\obj\Debug\net8.0\MyProject.csproj.CopyComplete
+C:\MyProject\obj\Debug\net8.0\MyProject.sourcelink.json

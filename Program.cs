@@ -17,12 +17,9 @@ class Program {
 
         MenuProgram.StartMenuOpisanie();
 
-
-
+        Console.ReadLine();
 
     }
-
-
 
 }
 
